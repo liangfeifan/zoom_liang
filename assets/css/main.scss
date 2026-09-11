@@ -37,3 +37,101 @@
     "layout/sidebar",
     "layout/json_cv"
 ;
+
+/* Personal homepage enhancements */
+:root {
+  --lj-ink: #102a43;
+  --lj-muted: #627d98;
+  --lj-accent: #147d92;
+  --lj-soft: #edf8f7;
+  --lj-border: rgba(16, 42, 67, 0.12);
+}
+
+.page__title {
+  color: var(--lj-ink);
+  letter-spacing: -0.025em;
+}
+
+.home-kicker {
+  margin: 0 0 0.75rem;
+  color: var(--lj-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.4rem 0 2.4rem;
+}
+
+.research-tags span {
+  padding: 0.42rem 0.8rem;
+  border: 1px solid rgba(20, 125, 146, 0.22);
+  border-radius: 999px;
+  background: var(--lj-soft);
+  color: #0f6475;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2.8rem;
+}
+
+.interest-card {
+  position: relative;
+  min-height: 190px;
+  padding: 1.4rem;
+  overflow: hidden;
+  border: 1px solid var(--lj-border);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff, #f6fafb);
+  box-shadow: 0 12px 30px rgba(16, 42, 67, 0.07);
+}
+
+.interest-card h3 { margin: 0.6rem 0 0.65rem; color: var(--lj-ink); }
+.interest-card p { margin: 0; color: var(--lj-muted); font-size: 0.93rem; }
+.card-index { color: var(--lj-accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; }
+
+.timeline {
+  margin: 1rem 0 2.8rem;
+  border-left: 2px solid rgba(20, 125, 146, 0.25);
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 1.2rem;
+  padding: 0 0 1.8rem 1.5rem;
+}
+
+.timeline-item::before {
+  position: absolute;
+  top: 0.35rem;
+  left: -0.43rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--lj-accent);
+  box-shadow: 0 0 0 1px rgba(20, 125, 146, 0.3);
+  content: "";
+}
+
+.timeline-date { color: var(--lj-accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; }
+.timeline-item h3 { margin: 0; color: var(--lj-ink); }
+.timeline-item p { margin: 0.25rem 0 0; color: var(--lj-muted); }
+
+.author__avatar img { border: 0; border-radius: 22%; box-shadow: 0 14px 32px rgba(16, 42, 67, 0.16); }
+
+@media (max-width: 700px) {
+  .interest-grid { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 1fr; gap: 0.35rem; }
+}
